@@ -53,27 +53,51 @@
 					<li>
 						<a href="#" class="dropdown-toggle">
 							<i class="icon-desktop"></i>
-							<span class="menu-text"> Specility </span>
+							<span class="menu-text"> City </span>
 
 							<b class="arrow icon-angle-down"></b>
 						</a>
 
 						<ul class="submenu">
 							<li>
-								<a href="<?php echo base_url()."Specility/";?>">
+								<a href="<?php echo base_url()."City/";?>">
 									<i class="icon-double-angle-right"></i>
 									Specility List
 								</a>
 							</li>
 
 							<li>
-								<a href="<?php echo base_url()."Specility/specility_add";?>">
+								<a href="<?php echo base_url()."City/create";?>">
 									<i class="icon-double-angle-right"></i>
-									Create New Specility
+									Create New City
 								</a>
 							</li>							
 						</ul>
 					</li>
+                    <li>
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-desktop"></i>
+                            <span class="menu-text"> Specility </span>
+
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="<?php echo base_url()."Specility/";?>">
+                                    <i class="icon-double-angle-right"></i>
+                                    Specility List
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="<?php echo base_url()."Specility/specility_add";?>">
+                                    <i class="icon-double-angle-right"></i>
+                                    Create New Specility
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 					<li>
 						<a href="#" class="dropdown-toggle">
 							<i class="icon-desktop"></i>
