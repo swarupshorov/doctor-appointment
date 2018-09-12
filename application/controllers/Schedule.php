@@ -10,15 +10,17 @@ class Schedule extends CI_Controller
     }
     public function index(){
         $data = array();
-        $data["schedule"]= $this->ScheduleModel->getAllChamberInfo('chamber','id','DESC');
+        $data["schedule"] = $this->ScheduleModel->getAllScheduleInfo();
+        
     	$this->load->view("header");
         $this->load->view("left-bar");
-        $this->load->view("doc/chamber_list",$data);
+        $this->load->view("doc/schedule_list",$data);
         $this->load->view("footer");
     }
     public function schedule_add(){
         $doc_list = array();
-        $data['allData'] = array('date'=>'','patient_view'=>'','status'=>'','chamber_id'=>'','date'=>'');  
+        $data['chamber_list'] =array(0=>"Select Chamber")+$this->dbaction->getlist('chamber','id','place');
+        $data['allData'] = array('date'=>'','patient_view'=>'','status'=>'','chamber_id'=>'');  
         
         $this->load->view("header");
         $this->load->view("left-bar");
@@ -26,4 +28,26 @@ class Schedule extends CI_Controller
         $this->load->view("footer");
 
     } 
+    public function saveSchedule(){
+        $data['chamber_list'] =array(0=>"Select Chamber")+$this->dbaction->getlist('chamber','id','place');
+        $data['allData'] = array(
+            'chamber_id' =>$this->input->post('chamber_id'),
+            'date' =>$this->input->post('date'),
+            'patient_view' =>$this->input->post('patient_view'),
+        );
+        $this->form_validation->set_rules('chamber_id', 'Chamber', 'required');
+        $this->form_validation->set_rules('date', 'Chamber', 'required');
+        $this->form_validation->set_rules('patient_view', 'Chamber', 'required');
+        if($this->form_validation->run() == FALSE or ($new_in_time > $new_out_time)){
+            $this->load->view("header");
+            $this->load->view("left-bar");
+            $this->load->view("doc/schedule_form",$data);
+            $this->load->view("footer");
+        }else{            
+            $this->dbaction->insert('schedule',$data['allData']);
+            $this->session->set_flashdata('success', 'Save Chamber.');
+            redirect('Schedule');
+        }
+
+    }
 }

@@ -50,7 +50,7 @@ class Doctor extends CI_Controller
             $this->load->view("footer");
         }else{
             $result = $this->DoctorModel->SaveData($data);
-            if($result){
+            if($result){                
                 $this->session->set_flashdata('success', 'Save Doctor.');            
                 redirect('Doctor');
             }else{

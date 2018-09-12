@@ -10,7 +10,7 @@ class Chamber extends CI_Controller
     }
     public function index(){
         $data = array();
-         $data["chamber"]= $this->ChamberModel->getAllChamberInfo('chamber','id','DESC');
+        $data["chamber"]= $this->ChamberModel->getAllChamberInfo('chamber','id','DESC');
     	$this->load->view("header");
         $this->load->view("left-bar");
         $this->load->view("doc/chamber_list",$data);

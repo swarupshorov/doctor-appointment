@@ -206,5 +206,21 @@
 			</div>
 			<div class="main-content">
 				<div class="page-content">
-					<?php echo $this->session->flashdata('success'); ?>
-					<?php echo $this->session->flashdata('error'); ?>
+					<?php 
+						$error = $this->session->flashdata('error');
+						$success =  $this->session->flashdata('success');
+						if(isset( $error)){
+							echo '<div class="alert alert-error">
+									<button type="button" class="close" data-dismiss="alert">
+											<i class="icon-remove"></i>
+									</button>'.$this->session->flashdata('error').'</div>';
+						}
+						if(isset($success)){
+							echo '<div class="alert alert-block alert-success">
+									<button type="button" class="close" data-dismiss="alert">
+										<i class="icon-remove"></i>
+									</button>'.$this->session->flashdata('success').'</div>';
+						}
+					?>
+					
+					
