@@ -14,6 +14,7 @@
 					<th class="sorting" role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" aria-label="Domain: activate to sort column ascending" style="width: 161px;">SL</th>					
 					<th class="sorting" role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" aria-label="Price: activate to sort column ascending" style="width: 125px;">Date</th>
 					<th class="sorting" role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" aria-label="Price: activate to sort column ascending" style="width: 125px;">Place</th>
+					<th class="sorting" role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" aria-label="Price: activate to sort column ascending" style="width: 125px;">Patient View</th>
 					<th class="sorting" role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" aria-label="Price: activate to sort column ascending" style="width: 125px;">Status</th>
 					<th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 160px;">Action</th>
 				</tr>
@@ -29,6 +30,7 @@
 					<td class="hidden-480 "><?php echo $counter; ?></td>
 					<td class="hidden-phone "><?php echo $schedule_list['date']; ?></td>				
 					<td class="hidden-phone "><?php echo $schedule_list['place']; ?></td>					
+					<td class="hidden-phone "><?php echo $schedule_list['patient_view']; ?></td>
 					<td class="hidden-phone ">
 						<?php 
 							if($schedule_list['status']==0){

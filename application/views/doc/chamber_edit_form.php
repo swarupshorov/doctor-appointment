@@ -13,7 +13,13 @@
 			<div class="span12">
 				<!--PAGE CONTENT BEGINS-->
 				<?php echo  form_open('Chamber/SaveEditData', 'class="form-horizontal" id=""');?>
-					<div class="control-group">
+                <div class="control-group">
+                    <label class="control-label" for="form-field-1">City: <i class="icon-asterisk" style="color: #d14747"></i></label>
+                    <div class="controls">
+                        <?php echo form_dropdown('city_id',$city_list,'0',array('class'=>'chzn-select','id'=>'form-field-select-3'));?>
+                    </div>
+                </div>
+                <div class="control-group">
 						<label class="control-label " for="place">Place Name: <i class="icon-asterisk" style="color: #d14747"></i></label>
 						<div class="controls">
 							<textarea  placeholder="Chamber Place" name="place"  id="place" required><?php echo set_value('place',$allData->place); ?></textarea>

@@ -62,7 +62,7 @@
 							<li>
 								<a href="<?php echo base_url()."City/";?>">
 									<i class="icon-double-angle-right"></i>
-									Specility List
+									City List
 								</a>
 							</li>
 
@@ -71,7 +71,7 @@
 									<i class="icon-double-angle-right"></i>
 									Create New City
 								</a>
-							</li>							
+							</li>
 						</ul>
 					</li>
                     <li>
@@ -144,6 +144,30 @@
 									Create New Schedule
 								</a>
 							</li>							
+						</ul>
+					</li>
+                    <li>
+						<a href="#" class="dropdown-toggle">
+							<i class="icon-desktop"></i>
+							<span class="menu-text"> Appointment </span>
+
+							<b class="arrow icon-angle-down"></b>
+						</a>
+
+						<ul class="submenu">
+							<li>
+								<a href="<?php echo base_url()."Appointment/";?>">
+									<i class="icon-double-angle-right"></i>
+                                    Appointment List
+								</a>
+							</li>
+
+							<li>
+								<a href="<?php echo base_url()."Appointment/create";?>">
+									<i class="icon-double-angle-right"></i>
+									Create New Appointment
+								</a>
+							</li>
 						</ul>
 					</li>
 									

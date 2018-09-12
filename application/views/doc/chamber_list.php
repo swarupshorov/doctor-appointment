@@ -13,6 +13,7 @@
 				<thead>
 					
 					<th class="sorting" role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" aria-label="Domain: activate to sort column ascending" style="width: 161px;">SL</th>
+					<th class="sorting" role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" aria-label="Price: activate to sort column ascending" style="width: 125px;">City Name</th>
 					<th class="sorting" role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" aria-label="Price: activate to sort column ascending" style="width: 125px;">Name</th>
 					<th class="sorting" role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" aria-label="Price: activate to sort column ascending" style="width: 125px;">Place</th>
 					<th class="sorting" role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" aria-label="Price: activate to sort column ascending" style="width: 125px;">Appointmenet Time</th>
@@ -31,7 +32,8 @@
 			?>
 				<tr class="odd">
 					<td class="hidden-480 "><?php echo $counter; ?></td>
-					<td class="hidden-phone "><?php echo $chamber_list->doc_name; ?></td>				
+					<td class="hidden-phone "><?php echo $chamber_list->city_name; ?></td>
+					<td class="hidden-phone "><?php echo $chamber_list->doc_name; ?></td>
 					<td class="hidden-phone "><?php echo $chamber_list->place; ?></td>
 					<td class="hidden-phone "><?php echo $chamber_list->in_time." - ".$chamber_list->out_time; ?></td>				
 					<td class="hidden-phone "><?php echo $chamber_list->phone; ?></td>

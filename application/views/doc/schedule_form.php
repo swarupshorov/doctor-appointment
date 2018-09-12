@@ -17,7 +17,7 @@
 						<label class="control-label" for="date">Date: <i class="icon-asterisk" style="color: #d14747"></i></label>
 						<div class="controls">
 							<div class="row-fluid input-append">
-								<input class="date-picker" id="id-date-picker-1 date" type="text" name="date" data-date-format="yyyy-mm-dd" />
+								<input class="date-picker" id="id-date-picker-1 date" type="text" name="date" value="<?php echo set_value('date',$allData->date);?>" data-date-format="yyyy-mm-dd" />
 								<span class="add-on">
 									<i class="icon-calendar"></i>
 								</span>
@@ -33,7 +33,7 @@
 					<div class="control-group">
 						<label class="control-label" for="patient_view">Patient view: <i class="icon-asterisk" style="color: #d14747"></i></label>
 						<div class="controls">
-							<input type="text" id="patient_view" placeholder="Give Patient view number" name="patient_view" value=" " required/>
+							<input type="text" id="patient_view" placeholder="Give Patient view number" name="patient_view" value="<?php echo set_value('patient_view',$allData->patient_view);?>" required/>
 						</div>
 					</div>
 

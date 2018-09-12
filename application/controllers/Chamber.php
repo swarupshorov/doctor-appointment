@@ -19,7 +19,8 @@ class Chamber extends CI_Controller
     
     public function chamber_add(){
         $doc_list = array();
-        $data['allData'] = array('place'=>'','in_time'=>'','out_time'=>'','user_id'=>'','phone'=>'','email'=>'');  
+        $data['allData'] = array('place'=>'','in_time'=>'','out_time'=>'','user_id'=>'','phone'=>'','email'=>'','city_id'=>'');
+        $data['city_list'] =array(0=>"Select City")+$this->dbaction->getlist('city','id','name');
         $list = $this->ChamberModel->getDoctor();
         if( !empty($list)){
             foreach ($list as $key => $value) {
@@ -42,6 +43,7 @@ class Chamber extends CI_Controller
             }
         }
         $data['doc_list']= $doc_list;
+        $data['city_list'] =array(0=>"Select City")+$this->dbaction->getlist('city','id','name');
 
         $in_time        =   $this->input->post('in_time');
         $out_time       =   $this->input->post('out_time');
@@ -50,12 +52,14 @@ class Chamber extends CI_Controller
         
         $data['allData'] = array(
             "place"     =>$this->input->post('place'),
+            "city_id"     =>$this->input->post('city_id'),
             "in_time"   =>date("H:i:s",$new_in_time),
             "out_time"  =>date("H:i:s",$new_out_time),
             "user_id"   =>$this->input->post('user_id'),
             "phone"   =>$this->input->post('phone'),
             "email"   =>$this->input->post('email'),
         );
+        $this->form_validation->set_rules('city_id', 'City Name', 'required');
         $this->form_validation->set_rules('place', 'Place', 'required');
         $this->form_validation->set_rules('in_time', 'In Time ', 'required');
         $this->form_validation->set_rules('out_time', 'out Time', 'required');
@@ -78,6 +82,7 @@ class Chamber extends CI_Controller
     }
     public function edit($id){
         $chamber_list = $this->dbaction->selectdata('chamber','id',$id);
+        $data['city_list'] =array(0=>"Select City")+$this->dbaction->getlist('city','id','name');
 
         $data['allData'] = $chamber_list[0];
 
@@ -107,8 +112,10 @@ class Chamber extends CI_Controller
             }
         }
         $data['doc_list']= $doc_list;
+        $data['city_list'] =array(0=>"Select City")+$this->dbaction->getlist('city','id','name');
         $data['allData'] = (object) array(
             "id"        =>$id,
+            "city_id"   =>$this->input->post('city_id'),
             "place"     =>$this->input->post('place'),
             "in_time"   =>date("H:i:s",$new_in_time),
             "out_time"  =>date("H:i:s",$new_out_time),

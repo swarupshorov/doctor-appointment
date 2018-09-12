@@ -22,13 +22,17 @@ class ChamberModel extends CI_Model
 
     }
     public function getAllChamberInfo(){ 
-      $sql = "select c.id,c.place,c.in_time,c.out_time,c.phone,c.email,um.name doc_name  
+      $sql = "select c.id,c.place,c.in_time,c.out_time,c.phone,c.email,um.name doc_name,city.name  city_name 
               from 
                 chamber as c
               left join 
                 user_meta as um 
               on 
-                c.user_id =um.user_id";
+                c.user_id =um.user_id
+               left join 
+                  city 
+               on 
+                city.id = c.city_id";
         $query = $this->db->query($sql);
         return $query->result();
     }
