@@ -98,6 +98,30 @@
 							</li>							
 						</ul>
 					</li>
+					<li>
+						<a href="#" class="dropdown-toggle">
+							<i class="icon-desktop"></i>
+							<span class="menu-text"> Schedule </span>
+
+							<b class="arrow icon-angle-down"></b>
+						</a>
+
+						<ul class="submenu">
+							<li>
+								<a href="<?php echo base_url()."Schedule/";?>">
+									<i class="icon-double-angle-right"></i>
+									Schedule List
+								</a>
+							</li>
+
+							<li>
+								<a href="<?php echo base_url()."Schedule/schedule_add";?>">
+									<i class="icon-double-angle-right"></i>
+									Create New Schedule
+								</a>
+							</li>							
+						</ul>
+					</li>
 									
 
 					<li>

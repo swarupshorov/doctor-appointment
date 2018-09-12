@@ -2,6 +2,7 @@
 
 		<script src="<?php echo base_url().'assets/js/jquery.min.js';?>"></script>		
 		<script src="<?php echo base_url().'assets/js/bootstrap.min.js';?>"></script>
+		<script src="<?php echo base_url().'assets/js/chosen.jquery.min.js';?>"></script>
 		<script src="<?php echo base_url().'assets/js/bootstrap-datepicker.min.js';?>"></script>
 		<script src="<?php echo base_url().'assets/js/bootstrap-timepicker.min.js';?>"></script>
 		<script src="<?php echo base_url().'assets/js/jquery.dataTables.min.js';?>"></script>
@@ -85,11 +86,12 @@
 					}
 				 })
 			 };
-			 $('#timepicker1').timepicker({
+			 $('.timepicker1').timepicker({
 					minuteStep: 1,
 					showSeconds: true,
 					showMeridian: false
 				});
+			 $(".chzn-select").chosen(); 
 			// drawPieChart(placeholder, data);
 			
 			 /**

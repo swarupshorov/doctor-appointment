@@ -52,12 +52,14 @@ class Dbaction {
     * */
     public function update($table,$values,$entityName,$entityValue)
     {
-        if(is_array($values) && !empty($values)){
+        if(!empty($values)){
             foreach($values as $key => $value){
                 $this->CI->db->set($key,$value);
             }
             $this->CI->db->where($entityName,$entityValue);
-            if($this->CI->db->update($table)){
+            $state = $this->CI->db->update($table);
+            
+            if($state){
                 return true;
             }
         }
