@@ -1,4 +1,7 @@
 </div><!--/.main-container-->
+        <script>
+            var url = "<?php echo base_url();?>";
+        </script>
 
 		<script src="<?php echo base_url().'assets/js/jquery.min.js';?>"></script>		
 		<script src="<?php echo base_url().'assets/js/bootstrap.min.js';?>"></script>
@@ -12,6 +15,8 @@
 		<script src="<?php echo base_url().'assets/js/jquery.slimscroll.min.js';?>"></script>
 		<script src="<?php echo base_url().'assets/js/ace-elements.min.js';?>"></script>
 		<script src="<?php echo base_url().'assets/js/ace.min.js';?>"></script>
+		<script src="<?php echo base_url().'assets/js/custom.js';?>"></script>
+
 		<script type="text/javascript">
 			$('#sample-table-2').dataTable();
 

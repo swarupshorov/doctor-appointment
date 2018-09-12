@@ -23,8 +23,22 @@
         <div class="control-group">
             <label class="control-label" for="form-field-1">City: <i class="icon-asterisk" style="color: #d14747"></i></label>
             <div class="controls">
+                <?php echo form_dropdown('doctor_id',$doc_list,'0',array('class'=>'chzn-select','id'=>'city-id'));?>
+
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="form-field-1">Chamber : <i class="icon-asterisk" style="color: #d14747"></i></label>
+            <div class="controls">
                 <?php echo form_dropdown('chamber_id',$chamber_list,'0',array('class'=>'chzn-select','id'=>'form-field-select-3'));?>
 
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="form-field-1">Patient : <i class="icon-asterisk" style="color: #d14747"></i></label>
+            <div class="controls">
+                <?php echo form_dropdown('patient_id',$user_list,'0',array('class'=>'chzn-select','id'=>'form-field-select-3'));?>
             </div>
         </div>
         <div class="control-group">
@@ -38,52 +52,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="control-group">
-            <label class="control-label" for="in_time">In Time: <i class="icon-asterisk" style="color: #d14747"></i></label>
-            <div class="controls">
-                <div class="input-append bootstrap-timepicker">
-
-                    <input id="in_time" type="text" class="input-small timepicker1" name="in_time" value="<?php echo set_value('in_time',$allData['in_time']);?>" required />
-                    <span class="add-on">
-									<i class="icon-time"></i>
-								</span>
-                </div>
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="out_time">Out Time: <i class="icon-asterisk" style="color: #d14747"></i></label>
-            <div class="controls">
-                <div class="input-append bootstrap-timepicker">
-
-                    <input id="out_time" type="text" class="input-small timepicker1" value="<?php echo set_value('out_time',$allData['out_time']);?>" name="out_time" required />
-                    <span class="add-on">
-									<i class="icon-time"></i>
-								</span>
-                </div>
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="form-field-1">Select Doctor: <i class="icon-asterisk" style="color: #d14747"></i></label>
-            <div class="controls">
-                <?php echo form_dropdown('user_id',$doc_list,'0',array('class'=>'chzn-select','id'=>'form-field-select-3'));?>
-
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="phone">Phone: </label>
-            <div class="controls">
-                <input type="text" id="phone" placeholder="Contact No" name="phone" value=" <?php echo set_value('phone',$allData['phone']); ?>" required/>
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="email">Email:</label>
-            <div class="controls">
-                <input type="email" id="email" placeholder="E-mail" name="email" value=" <?php echo set_value('email',$allData['email']); ?>" />
-            </div>
-        </div>
-
-
         <div class="form-actions">
             <button class="btn btn-info" type="submit">
                 <i class="icon-ok bigger-110"></i>

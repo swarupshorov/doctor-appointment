@@ -30,7 +30,20 @@ class Appointment extends CI_Controller
         //$data['chamber_list'] =array(0=>"Select Chamber")+$this->dbaction->getlist('chamber','id','place');
         $data['allData'] = array('doctor_id'=>'','patient_id'=>'','chamber_id'=>'','date'=>'');
         $data['chamber_list'] =array(0=>"Select Chamber")+$this->dbaction->getlist('chamber','id','place');
-        $data['doc_list']     = $this->AppointmentModel->doctor_list();
+        $list     = $this->AppointmentModel->getDoctor();
+        if( !empty($list)){
+            foreach ($list as $key => $value) {
+                $doc_list[$value['id']] = $value['name'];
+            }
+        }
+        $data['doc_list']= $doc_list;
+        $list2     = $this->AppointmentModel->getDoctor();
+        if( !empty($list2)){
+            foreach ($list2 as $key => $value) {
+                $user_list[$value['id']] = $value['name'];
+            }
+        }
+        $data['user_list']= $user_list;
         $this->load->view("header");
         $this->load->view("left-bar");
         $this->load->view('doc/appointment_form',$data);
@@ -38,6 +51,11 @@ class Appointment extends CI_Controller
     }
     public  function saveAppointment(){
         $data['chamber_list'] =array(0=>"Select Chamber")+$this->dbaction->getlist('chamber','id','place');
+
+    }
+    public function getDocList(){
+        $id = $this->input->post('id');
+        $this->AppointmentModel->Doctor($id);
 
     }
 
