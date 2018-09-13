@@ -16,11 +16,8 @@ class LoginModel extends CI_Model
                 ->from('user')
                 ->where($where)                
                 ->get()
-                ->row();
-
-        
-        if($query){
-        	
+                ->row();        
+        if($query){        	
             if($password==$query->password){
                 $data = array(
                     'id' => $query->id,
@@ -31,8 +28,7 @@ class LoginModel extends CI_Model
                 $this->session->set_userdata($data);
                 return true;
             }
-        }
-        
+        }        
         return false;
     }
 }

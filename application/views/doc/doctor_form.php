@@ -1,12 +1,10 @@
 
 		<div class="page-header position-relative">
 			<h1>
-				Doctor information
+				Add New Doctor
 				<small>
 					<i class="icon-double-angle-right"></i>
-					Common form elements and layouts
-					
-					
+					Common form elements and layouts					
 				</small>
 			</h1>
 			<?php echo $this->session->flashdata('outWarn'); ?>

@@ -1,7 +1,7 @@
 
 		<div class="page-header position-relative">
 			<h1>
-				Schedule List
+				Add New  Schedule
 				<small>
 					<i class="icon-double-angle-right"></i>
 					Common form elements and layouts
@@ -27,9 +27,12 @@
 					<div class="control-group">
 						<label class="control-label" for="form-field-1">Select Chamber: <i class="icon-asterisk" style="color: #d14747"></i></label>
 						<div class="controls">
-							<?php echo form_dropdown('chamber_id',$chamber_list,'0',array('class'=>'chzn-select','id'=>'form-field-select-3'));?>						
+							<?php echo form_dropdown('chamber_name',$chamber_list,$allData->chamber_name,array('class'=>'chzn-select','id'=>'chamber-id'));?>						
 						</div>
 					</div>
+					<div class="control-group response-doctor">
+			           <!-- response chamber list from script file -->
+			        </div>
 					<div class="control-group">
 						<label class="control-label" for="patient_view">Patient view: <i class="icon-asterisk" style="color: #d14747"></i></label>
 						<div class="controls">

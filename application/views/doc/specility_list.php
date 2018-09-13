@@ -1,13 +1,24 @@
 
 		<div class="page-header position-relative">
 			<h1>
-				Doctor information
+				Specilit information
 				<small>
 					<i class="icon-double-angle-right"></i>
 					Common form elements and layouts
 				</small>
 			</h1>
 		</div><!--/.page-header-->
+		<div class="table-header page-table-header" >
+			<a href="<?php echo base_url()."Specility/specility_add";?>">
+				<div class="clearfix">
+					<h5 class="bigger lighter">
+						<i class="icon-plus"></i>
+						Add New
+					</h5>
+				</div>
+			</a>
+
+		</div>
 		<div id="sample-table-2_wrapper" class="dataTables_wrapper" role="grid">
 			<table id="sample-table-2" class="table table-striped table-bordered table-hover dataTable" aria-describedby="sample-table-2_info">
 				<thead>
@@ -29,9 +40,6 @@
 					
 					<td class="hidden-480 "><?php echo $counter; ?></td>
 					<td class="hidden-phone "><?php echo $specility_list->name; ?></td>
-
-					
-
 					<td class="td-actions ">
 						<div class="hidden-phone visible-desktop action-buttons">							
 							<a class="green" href="<?php echo base_url() . "Specility/edit/" .$specility_list->id; ?>">

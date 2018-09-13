@@ -8,7 +8,7 @@
 ?>
         <div class="page-header position-relative">
 			<h1>
-				City information
+				Add New  City
 				<small>
 					<i class="icon-double-angle-right"></i>
 					Common form elements and layouts

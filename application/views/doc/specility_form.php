@@ -1,7 +1,7 @@
 
 		<div class="page-header position-relative">
 			<h1>
-				Specility List
+				Add New Specilit
 				<small>
 					<i class="icon-double-angle-right"></i>
 					Common form elements and layouts

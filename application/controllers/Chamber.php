@@ -6,6 +6,7 @@ class Chamber extends CI_Controller
     {
         parent::__construct();
         $this->load->library('Dbaction');
+        $this->load->library('session');
         $this->load->model('ChamberModel');
     }
     public function index(){

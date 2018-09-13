@@ -19,11 +19,11 @@
 <div class="row-fluid">
     <div class="span12">
         <!--PAGE CONTENT BEGINS-->
-        <?php echo  form_open('Appointment/saveAppointment', 'class="form-horizontal" id=""');?>
+        <?php echo  form_open('Appointment/SaveEditData', 'class="form-horizontal" id=""');?>
         <div class="control-group">
             <label class="control-label" for="form-field-1">City: <i class="icon-asterisk" style="color: #d14747"></i></label>
             <div class="controls">
-                <?php echo form_dropdown('city_id',$city_list,$allData['city_id'],array('class'=>'chzn-select','id'=>'city-id'));?>
+                <?php echo form_dropdown('city_id',$city_list,$appointment->city_id,array('class'=>'chzn-select','id'=>'city-id'));?>
             </div>
         </div>
         <div class="control-group response-chamber">
@@ -36,14 +36,14 @@
         <div class="control-group">
             <label class="control-label" for="form-field-1">Patient : <i class="icon-asterisk" style="color: #d14747"></i></label>
             <div class="controls">
-                <?php echo form_dropdown('patient_id',$user_list,$allData['patient_id'],array('class'=>'chzn-select','id'=>'form-field-select-3'));?>
+                <?php echo form_dropdown('patient_id',$user_list,$appointment->patient_id,array('class'=>'chzn-select','id'=>'form-field-select-3'));?>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="date">Date: <i class="icon-asterisk" style="color: #d14747"></i></label>
             <div class="controls">
                 <div class="row-fluid input-append">
-                    <input class="date-picker" id="id-date-picker-1 date" type="text" name="date" data-date-format="yyyy-mm-dd" />
+                    <input class="date-picker" id="id-date-picker-1 date" type="text" name="date" value='<?php echo set_value("date",$appointment->date);?>' data-date-format="yyyy-mm-dd" />
                     <span class="add-on">
     					<i class="icon-calendar"></i>
     				</span>
@@ -64,6 +64,8 @@
         </div>
 
         <div class="hr"></div>
+        <input type="hidden" name="id" id="id" value="<?php echo set_value('id', $appointment->id); ?>"  />
+            
 
         <?php echo form_close();?>
     </div><!--/.span-->

@@ -5,7 +5,8 @@ class Login extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model("LoginModel");      
+        $this->load->model("LoginModel"); 
+        $this->load->library('session');     
 
     }
     public function index(){
@@ -16,7 +17,6 @@ class Login extends CI_Controller
 
         $password = $this->security->xss_clean($this->input->post('login-password'));
         $type = $this->security->xss_clean($this->input->post('type'));
-
         $result = $this->LoginModel->validate($email,$password,$type);
 
         if(!$result){
@@ -25,7 +25,12 @@ class Login extends CI_Controller
         }else{
             // If user did validate,
             // Send them to members area
-            redirect('Deshboard');
+            
+            if($_SESSION['type']==3){
+                redirect('Deshboard');
+            }elseif ($_SESSION['type']==2) {
+                redirect('Doctor/view');
+            }
         }
 
     }

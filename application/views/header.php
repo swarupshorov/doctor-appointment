@@ -15,6 +15,7 @@
 		<link href="<?php echo base_url().'assets/css/ace.min.css'; ?>" rel="stylesheet" />
 		<link href="<?php echo base_url().'assets/css/ace-responsive.min.css'; ?>" rel="stylesheet" />
 		<link href="<?php echo base_url().'assets/css/ace-skins.min.css'; ?>" rel="stylesheet" />
+		<link href="<?php echo base_url().'assets/css/style.css'; ?>" rel="stylesheet" />
 		
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 

@@ -1,7 +1,7 @@
 
 		<div class="page-header position-relative">
 			<h1>
-				Edit Specialist information
+				Edit Schedule information
 				<small>
 					<i class="icon-double-angle-right"></i>
 					Common form elements and layouts
@@ -27,7 +27,7 @@
                 <div class="control-group">
                     <label class="control-label" for="form-field-1">Select Chamber: <i class="icon-asterisk" style="color: #d14747"></i></label>
                     <div class="controls">
-                        <?php echo form_dropdown('chamber_id',$chamber_list,'0',array('class'=>'chzn-select','id'=>'form-field-select-3'));?>
+                        <?php echo form_dropdown('chamber_name',$chamber_list,$schedule->chamber_name,array('class'=>'chzn-select','id'=>'form-field-select-3'));?>
                     </div>
                 </div>
                 <div class="control-group">

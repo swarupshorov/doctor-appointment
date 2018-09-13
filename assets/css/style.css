@@ -1,0 +1,23 @@
+.page-table-header a{
+	text-decoration:none;
+}
+.page-table-header a h5{
+	text-align:right;
+	margin-right:50px;
+	color:#fff;	
+}
+.education-f-add input[type="text"] {
+	display: block;
+	margin: 5px 0px;
+}
+.add-new-btn{
+	
+	padding-left: 180px;
+}
+.add-new-btn input["button"]{
+	width: 30px;
+}
+.field-remove{
+	display: inline-block;
+	color: red;
+}

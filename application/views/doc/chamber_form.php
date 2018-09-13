@@ -1,7 +1,7 @@
 
 		<div class="page-header position-relative">
 			<h1>
-				Chamber List
+				Create New Chamber
 				<small>
 					<i class="icon-double-angle-right"></i>
 					Common form elements and layouts
@@ -16,7 +16,7 @@
                     <div class="control-group">
                         <label class="control-label" for="form-field-1">City: <i class="icon-asterisk" style="color: #d14747"></i></label>
                         <div class="controls">
-                            <?php echo form_dropdown('city_id',$city_list,'0',array('class'=>'chzn-select','id'=>'form-field-select-3'));?>
+                            <?php echo form_dropdown('city_id',$city_list,$allData['city_id'],array('class'=>'chzn-select','id'=>'form-field-select-3'));?>
 
                         </div>
                     </div>
@@ -53,7 +53,7 @@
 					<div class="control-group">
 						<label class="control-label" for="form-field-1">Select Doctor: <i class="icon-asterisk" style="color: #d14747"></i></label>
 						<div class="controls">
-							<?php echo form_dropdown('user_id',$doc_list,'0',array('class'=>'chzn-select','id'=>'form-field-select-3'));?>
+							<?php echo form_dropdown('user_id',$doc_list,$allData['user_id'],array('class'=>'chzn-select','id'=>'form-field-select-3'));?>
 
 						</div>
 					</div>

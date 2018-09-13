@@ -15,6 +15,7 @@ class DoctorModel extends CI_Model
             }
             $this->db->insert('user');
             $this->db->set('user_id',$this->db->insert_id());
+            $this->db->set('type',2);
             $this->db->insert('user_meta');
             $this->db->trans_complete();
             if ($this->db->trans_status() === FALSE) {

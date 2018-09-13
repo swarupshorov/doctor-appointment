@@ -12,6 +12,7 @@ class City extends CI_Controller{
         parent::__construct();
 
         $this->load->library('Dbaction');
+        $this->load->library('session');
 
         //========== load model ===============//
     }

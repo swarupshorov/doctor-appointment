@@ -8,7 +8,7 @@ class Doctor extends CI_Controller
         
         $this->load->model('DoctorModel');
         $this->load->library('Dbaction');
-       
+        $this->load->library('session'); 
 
     }
     public function index(){
@@ -36,9 +36,7 @@ class Doctor extends CI_Controller
             'password'=>$this->input->post('password'),
             'email'=>$this->input->post('email'),
             'type'    =>2,
-        );
-
-        
+        );        
         $this->form_validation->set_rules('password', 'Password', 'required');
         $this->form_validation->set_rules('user_name', 'User Name', 'required');
         $this->form_validation->set_rules('email', 'User Email', 'required');
@@ -105,5 +103,29 @@ class Doctor extends CI_Controller
             $this->session->set_flashdata('error', 'Failed To Delete.');
             redirect('Doctor');
         }
+    }
+    public function view(){
+
+        $this->load->view("header");
+        $this->load->view("left-bar");
+        $this->load->view("doc/doctor_deshboard");
+        $this->load->view("footer");
+    }
+    public function AddInformation(){
+        $data['allData'] = array('name'=>'','cell_no'=>'','address'=>'','date_of_birth','special_id'=>'');
+        $data['specility_list'] =array(0=>"Select Specility")+$this->dbaction->getlist('specialist','id','name');
+        $this->load->view("header");
+        $this->load->view("left-bar");
+        $this->load->view("doc/doctor_incormation_add",$data);
+        $this->load->view("footer");
+    }
+    public function saveInformation(){
+        $data = array(
+            "name"=>$this->input->post('name'),
+            "cell_no"=>$this->input->post('cell_no'),
+            "address"=>$this->input->post('address'),
+            "date_of_birth"=>$this->input->post('date_of_birth'),
+            "special_id"=>$this->input->post('special_id'),            
+        );
     }
 }

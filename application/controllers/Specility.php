@@ -8,6 +8,7 @@ class Specility extends CI_Controller
         
         
         $this->load->library('Dbaction');
+        $this->load->library('session');
        
 
     }

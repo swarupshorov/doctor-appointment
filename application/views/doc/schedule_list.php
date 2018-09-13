@@ -8,6 +8,16 @@
 				</small>
 			</h1>
 		</div><!--/.page-header-->
+		<div class="table-header page-table-header" >
+			<a href="<?php echo base_url()."Schedule/schedule_add";?>">
+				<div class="clearfix">
+					<h5 class="bigger lighter">
+						<i class="icon-plus"></i>
+						Add New
+					</h5>
+				</div>
+			</a>
+		</div>
 		<div id="sample-table-2_wrapper" class="dataTables_wrapper" role="grid">
 			<table id="sample-table-2" class="table table-striped table-bordered table-hover dataTable" aria-describedby="sample-table-2_info">
 				<thead>					
@@ -29,7 +39,7 @@
 				<tr class="odd">
 					<td class="hidden-480 "><?php echo $counter; ?></td>
 					<td class="hidden-phone "><?php echo $schedule_list['date']; ?></td>				
-					<td class="hidden-phone "><?php echo $schedule_list['place']; ?></td>					
+					<td class="hidden-phone "><?php echo $schedule_list['chamber_name']; ?></td>					
 					<td class="hidden-phone "><?php echo $schedule_list['patient_view']; ?></td>
 					<td class="hidden-phone ">
 						<?php 
