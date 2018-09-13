@@ -11,7 +11,7 @@ class Appointment extends CI_Controller
     function __construct()
     {
         parent::__construct();
-
+        auth_check();
         $this->load->library('Dbaction');
         $this->load->library('session');
         $this->load->model('AppointmentModel');

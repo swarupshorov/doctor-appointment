@@ -70,13 +70,35 @@ class Doctor extends CI_Controller
         $this->load->view("footer");
     }
     public function SaveEditData(){
+        $this->load->library('upload');
         $id=$this->input->post('id');
+        $file = $_FILES['photo'];
+        $file_name = $file['name'];
+        if(!empty($file)){
+            $check = explode('.',$file_name);
+            $ext = end($check);
+            $photo = strtolower('doc'.uniqid().'.'.$ext);    //Check File Extension
+            $upload_config['file_name'] = $photo;
+            $upload_config['upload_path'] = './uploads/';
+            $upload_config['allowed_types'] = 'gif|jpg|png|bmp|jpeg';
+            $upload_config['max_size']	= '512';
+            $upload_config['max_width']  = 'auto';
+            $upload_config['max_height']  = 'auto';
+            $this->upload->initialize($upload_config);
+            if (! $this->upload->do_upload('photo')){
+                $data['error'] = array('error' => $this->upload->display_errors());
+                $this->load->view("header");
+                $this->load->view("left-bar");
+                $this->load->view("doc/doctor_edit_form",$data);
+                $this->load->view("footer");
+            }
+        }
         $data = array(
+            'photo'=>$photo,
             'id'=>$id,
             'user_name'=>$this->input->post('user_name'),
             'password'=>$this->input->post('password'),
             'email'=>$this->input->post('email')
-           
         );
         $this->form_validation->set_rules('password', 'Password', 'required');
         $this->form_validation->set_rules('user_name', 'User Name', 'required');
@@ -112,20 +134,39 @@ class Doctor extends CI_Controller
         $this->load->view("footer");
     }
     public function AddInformation(){
-        $data['allData'] = array('name'=>'','cell_no'=>'','address'=>'','date_of_birth','special_id'=>'');
+        $id = $_SESSION['id'];
+        $Data = $this->dbaction->selectdata('user_meta','user_id',$id);
+        $data["allData"] = (object)$Data[0];
+
         $data['specility_list'] =array(0=>"Select Specility")+$this->dbaction->getlist('specialist','id','name');
+        //echo "<pre>";print_r($data['specility_list']);exit();
         $this->load->view("header");
         $this->load->view("left-bar");
         $this->load->view("doc/doctor_incormation_add",$data);
         $this->load->view("footer");
     }
     public function saveInformation(){
-        $data = array(
+        $id = $_SESSION['id'];
+        $data['allData'] = array(
             "name"=>$this->input->post('name'),
             "cell_no"=>$this->input->post('cell_no'),
             "address"=>$this->input->post('address'),
             "date_of_birth"=>$this->input->post('date_of_birth'),
             "special_id"=>$this->input->post('special_id'),            
         );
+
+        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('cell_no', 'Cell No', 'required');
+        if($this->form_validation->run() == FALSE){
+            $this->load->view("header");
+            $this->load->view("left-bar");
+            $this->load->view("doc/doctor_incormation_add",$data);
+            $this->load->view("footer");
+        }else{
+            //var_dump($data);exit();
+            $this->dbaction->update('user_meta',$data['allData'],'user_id',$id);
+            $this->session->set_flashdata('success', 'Update Doctor.');
+            redirect('Doctor/view');
+        }
     }
 }

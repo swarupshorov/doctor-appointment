@@ -10,7 +10,7 @@ class City extends CI_Controller{
     function __construct()
     {
         parent::__construct();
-
+        auth_check();
         $this->load->library('Dbaction');
         $this->load->library('session');
 

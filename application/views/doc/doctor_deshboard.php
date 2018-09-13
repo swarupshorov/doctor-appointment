@@ -7,9 +7,9 @@
 									<h1 class="grey lighter smaller">
 										<span class="blue bigger-125">
 											<i class="icon-random"></i>
-											500
+											Hello
 										</span>
-										Something Went Wrong
+										<?php echo $_SESSION['user_name'];?>
 									</h1>
 
 									<hr>

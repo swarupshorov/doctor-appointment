@@ -1,0 +1,186 @@
+/*----------------------------------------------
+	1.0 General Style
+-----------------------------------------------*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.85;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: inherit;
+}
+
+header {
+  position: relative;
+}
+
+header .navbar {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+header .navbar .navbar-brand img {
+  height: 40px;
+}
+ 
+
+.navbar-nav li {
+  margin-left: 20px;
+  font-size: 1.6rem;
+}
+
+.banner {
+  background: url(../images/banner-bg.jpg) no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+
+.banner:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, .7);
+}
+
+.search-option {
+  height: 400px;
+  position: relative;
+}
+
+.search-option form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.search-option form input {
+  width: 400px;
+  border: 0;
+  background: #fff;
+  border-radius: 30px;
+  height: 40px;
+  padding: 0 20px;
+  outline: none;
+}
+
+.search-option form button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.search-result-wrapper {
+  padding: 100px 0;
+  background: #f8fcff;
+}
+.search-result {
+  width: 600px;
+  margin: 0 auto;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.05);
+  padding: 30px 20px;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.search-result h3 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.search-result p {
+  margin-bottom: 0;
+}
+
+.search-result + .search-result {
+  margin-top: 40px;
+}
+
+.pagination-list {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.pagination {
+  display: block;
+}
+
+.pagination .nav-links .page-numbers {
+  border: 1px solid rgba(0, 0, 0, .5);
+  height: 35px;
+  width: 35px;
+  line-height: 35px;
+  text-align: center;
+  display: inline-block;
+  margin: 0 5px;
+  color: #000;
+}
+
+.page-header {
+  padding: 200px 0 130px;
+  text-align: center;
+  background: url(../images/banner-bg.jpg) no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+
+.page-header:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, .7);
+}
+
+.page-header-wrapper h2 {
+  font-size: 3.6rem;
+  color: white;
+}
+
+.registration-wrapper {
+  padding: 100px 0;
+}
+
+.registration-wrapper .registration-form {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.registration-wrapper .registration-form input {
+  width: 100%;
+  display: block;
+  height: 40px;
+  border: 1px solid rgba(black, .5);
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
